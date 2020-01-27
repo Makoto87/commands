@@ -1,0 +1,23 @@
+
+/* 背景色 */
+.bg-black {
+  background-color: black;
+  border: 0;
+}
+.bg-light-black {
+  background-color: #292C30;
+}
+
+/* カテゴリーボタン。ネットからコピペ */
+.search_item {
+  /* display: inline-block; */
+  padding: 3px;
+  cursor: pointer;
+}
+.search_item.is-active {
+  color: white;
+  background-color: black;
+}
+.is-hide {
+  display: none;
+}
