@@ -14,52 +14,85 @@
 </head>
 <body class="bg-dark text-light">
   <!-- 大元の親box-->
-  <div class="box-parent container d-flex flex-column align-items-center mw-100 vh-100">
+  <div class="box-parent container d-flex flex-column align-items-center mw-100">
     <!-- 見出し -->
-    <div class="h1 text-white-50">Commands</div>
+    <div class="h1 text-white-50 p-3">Commands</div>
 
     <!-- 検索ボックス-->
-    <div class="bg-black rounded border-dark shadow input-group mb-3 col-lg-10">
+    <div class="d-flex align-items-center bg-black rounded border-dark shadow input-group col-lg-10 mb-3 p-0">
       <input type="text" class="form-control bg-black shadow-lg" placeholder="Search…" aria-label="Search" aria-describedby="basic-addon2">
-      <div class="input-group-append shadow-lg">
-        <button class="btn btn-outline-secondary" type="button">Button</button>
+      <div class="d-flex align-items-center justify-content-center input-group-append shadow-lg px-3 py-2">
+        <button type="button" class="close" aria-label="閉じる" disabled>
+           <span aria-hidden="true">&times;</span>
+          </button>
       </div>
     </div>
 
     <!-- カテゴリ -->
-    <div class="container d-flex row">
+    <div class="container d-flex row mw-100 p-0">
       <!-- カテゴリ -->
-      <div class="search bg-black rounded shadow-lg col-12 col-lg-4">
-        <div class="bg-light-black search_item is-active rounded" data-group="">All</div>
-        <div class="bg-light-black search_item rounded" data-group="Basic">Basic</div>
-        <div class="bg-light-black search_item rounded" data-group="Player">Player</div>
-        <div class="bg-light-black search_item rounded" data-group="Queue">Queue</div>
-        <div class="bg-light-black search_item rounded" data-group="Audio Effects">Audio Effects</div>
-        <div class="bg-light-black search_item rounded" data-group="Settings">Settings</div>
-        <div class="bg-light-black search_item rounded" data-group="Premium">Premium</div>
+      <div class="row search bg-black rounded text-center shadow-lg col-12 col-lg-2 m-0 ml-lg-5">
+
+        <div class="col-3 col-lg-12 px-2 my-3 mb-lg-2">
+          <div class="bg-light-black search_item align-self-center is-active rounded p-2" data-group="">All</div>
+        </div>
+        <div class="col-3 col-lg-12 px-2 my-3 my-lg-2">
+          <div class="bg-light-black search_item rounded p-2" data-group="Basic">Basic</div>
+        </div>
+        <div class="col-3 col-lg-12 px-2 my-3 my-lg-2">
+          <div class="bg-light-black search_item rounded p-2" data-group="Player">Player</div>
+        </div>
+        <div class="col-3 col-lg-12 px-2 my-3 my-lg-2">
+          <div class="bg-light-black search_item rounded p-2" data-group="Queue">Queue</div>
+        </div>
+        <div class="col-4 col-lg-12 px-2 mb-3 my-lg-2">
+          <div class="bg-light-black search_item rounded p-2" data-group="Audio Effects">Audio Effects</div>
+        </div>
+        <div class="col-4 col-lg-12 px-2 mb-3 my-lg-2">
+          <div class="bg-light-black search_item rounded p-2" data-group="Settings">Settings</div>
+        </div>
+        <div class="col-4 col-lg-12 px-2 mb-3 mt-lg-2">
+          <div class="bg-light-black search_item rounded p-2" data-group="Premium">Premium</div>
+        </div>
       </div>
 
       <!-- カテゴリごとの要素 アコーディオンボックス -->
-      <div class="accordion col-12 col-lg-8" id="accordionExample">
-        <div class="card bg-light-black rounded shadow-lg">
-          <div class="card-header" id="headingOne">
+      <div class="accordion col-12 col-lg-9" id="accordionExample">
+
+        <div class="card bg-light-black rounded-lg shadow-lg my-3">
+          <div class="card-header p-0" id="headingOne">
             <h2 class="mb-0">
-              <button class="btn text-white" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Collapsible Group Item #1
+              <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div class="row m-0 p-0 d-flex align-items-center">
+                  <i class="h4 fas fa-angle-right icon m-0"></i>
+                  <p class="h2 ml-2">
+                    -play
+                  </p>
+                  <p class="h3 ml-1 text-white-50">
+                    [link or search query]
+                  </p>
+                </div>
               </button>
             </h2>
           </div>
+
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
-              Anim pariatur
+              <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div>Anim pariatur</div>
+                <div>まだ終わっていません</div>
+                <p class="bg-danger text-white w-25">
+                  Add to Queue
+                </p>
+              </button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             </div>
           </div>
         </div>
 
-        <div class="card bg-light-black rounded">
-          <div class="card-header" id="headingTwo">
+        <div class="card bg-light-black rounded my-3">
+          <div class="card-header p-0" id="headingTwo">
             <h2 class="mb-0">
-              <button class="btn text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <button class="btn text-white text-left collapsed w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 Collapsible Group Item #2
               </button>
             </h2>
@@ -71,10 +104,10 @@
           </div>
         </div>
 
-        <div class="card bg-light-black rounded">
-          <div class="card-header" id="headingThree">
+        <div class="card bg-light-black rounded my-3">
+          <div class="card-header p-0" id="headingThree">
             <h2 class="mb-0">
-              <button class="btn text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <button class="btn text-white text-left collapsed w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 Collapsible Group Item #3
               </button>
             </h2>

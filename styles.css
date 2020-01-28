@@ -16,7 +16,7 @@
 }
 .search_item.is-active {
   color: white;
-  background-color: black;
+  background-color: #78A4FA;
 }
 .is-hide {
   display: none;
