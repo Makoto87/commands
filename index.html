@@ -14,61 +14,61 @@
 </head>
 <body class="bg-dark text-light">
   <!-- 大元の親box-->
-  <div class="box-parent container d-flex flex-column align-items-center mw-100">
+  <div class="box-parent container d-flex flex-column align-items-center mw-100 min-vh-100 p-0 m-0">
     <!-- 見出し -->
     <div class="h1 text-white-50 p-3">Commands</div>
 
     <!-- 検索ボックス-->
-    <div class="d-flex align-items-center bg-black rounded border-dark shadow input-group col-lg-10 mb-3 p-0">
-      <input type="text" class="form-control bg-black shadow-lg" placeholder="Search…" aria-label="Search" aria-describedby="basic-addon2">
-      <div class="d-flex align-items-center justify-content-center input-group-append shadow-lg px-3 py-2">
-        <button type="button" class="close" aria-label="閉じる" disabled>
+    <div class="searchbox d-flex align-items-center bg-black rounded border-dark shadow input-group col-md-10 mb-3 p-0">
+      <input type="text" id="search" class="form-control focus bg-black shadow-lg" placeholder="Search…" aria-label="Search" aria-describedby="basic-addon2">
+      <div class="d-flex close align-items-center justify-content-center input-group-append bg-black p-0 mr-3 py-2">
+        <button type="button" class="text-white bg-black" aria-label="閉じる" disabled>
            <span aria-hidden="true">&times;</span>
           </button>
       </div>
     </div>
 
     <!-- カテゴリ -->
-    <div class="container d-flex row mw-100 p-0">
+    <div class="container row mw-100 m-0 p-0">
       <!-- カテゴリ -->
-      <div class="row search bg-black rounded text-center shadow-lg col-12 col-lg-2 m-0 ml-lg-5">
+      <div class="row search bg-black rounded text-center shadow-lg col-12 col-md-3 m-0 ml-md-5 h-75">
 
-        <div class="col-3 col-lg-12 px-2 my-3 mb-lg-2">
+        <div class="col-3 col-md-12 px-2 my-3 mb-md-2">
           <div class="bg-light-black search_item align-self-center is-active rounded p-2" data-group="">All</div>
         </div>
-        <div class="col-3 col-lg-12 px-2 my-3 my-lg-2">
+        <div class="col-3 col-md-12 px-2 my-3 my-md-2">
           <div class="bg-light-black search_item rounded p-2" data-group="Basic">Basic</div>
         </div>
-        <div class="col-3 col-lg-12 px-2 my-3 my-lg-2">
+        <div class="col-3 col-md-12 px-2 my-3 my-md-2">
           <div class="bg-light-black search_item rounded p-2" data-group="Player">Player</div>
         </div>
-        <div class="col-3 col-lg-12 px-2 my-3 my-lg-2">
+        <div class="col-3 col-md-12 px-2 my-3 my-md-2">
           <div class="bg-light-black search_item rounded p-2" data-group="Queue">Queue</div>
         </div>
-        <div class="col-4 col-lg-12 px-2 mb-3 my-lg-2">
+        <div class="col-4 col-md-12 px-2 mb-3 my-md-2">
           <div class="bg-light-black search_item rounded p-2" data-group="Audio Effects">Audio Effects</div>
         </div>
-        <div class="col-4 col-lg-12 px-2 mb-3 my-lg-2">
+        <div class="col-4 col-md-12 px-2 mb-3 my-md-2">
           <div class="bg-light-black search_item rounded p-2" data-group="Settings">Settings</div>
         </div>
-        <div class="col-4 col-lg-12 px-2 mb-3 mt-lg-2">
+        <div class="col-4 col-md-12 px-2 mb-3 mt-md-2">
           <div class="bg-light-black search_item rounded p-2" data-group="Premium">Premium</div>
         </div>
       </div>
 
       <!-- カテゴリごとの要素 アコーディオンボックス -->
-      <div class="accordion col-12 col-lg-9" id="accordionExample">
-
+      <div class="accordion col-12 col-md-8" id="accordionExample">
+        <!-- 1つめ -->
         <div class="card bg-light-black rounded-lg shadow-lg my-3">
-          <div class="card-header p-0" id="headingOne">
+          <div class="card-header px-0 py-2" id="headingOne">
             <h2 class="mb-0">
               <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <div class="row m-0 p-0 d-flex align-items-center">
-                  <i class="h4 fas fa-angle-right icon m-0"></i>
-                  <p class="h2 ml-2">
+                  <i class="category-text h5 fas fa-angle-right icon m-0 p-3"></i>
+                  <p class="category-text h2 ml-2 my-0">
                     -play
                   </p>
-                  <p class="h3 ml-1 text-white-50">
+                  <p class="category-text h3 ml-1 my-0 text-white-50">
                     [link or search query]
                   </p>
                 </div>
@@ -76,48 +76,142 @@
             </h2>
           </div>
 
-          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class="card-body">
+          <div id="collapseOne" class="collapse container m-0" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body container float-left w-100 m-0 pt-0">
               <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <div>Anim pariatur</div>
-                <div>まだ終わっていません</div>
-                <p class="bg-danger text-white w-25">
+                <div class="card-body-text h6">Loads your input and adds it to the queue. If there is no playing track, then it will start playing.</div>
+                <div class="card-body-text h6">Aliases: p, q, queue</div>
+                <p class="card-body-text rounded bg-danger h6 text-white text-center col-8 col-md-4 p-2">
                   Add to Queue
                 </p>
-              </button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              </button>
             </div>
           </div>
         </div>
-
-        <div class="card bg-light-black rounded my-3">
-          <div class="card-header p-0" id="headingTwo">
+        <!-- 2つめ -->
+        <div class="card bg-light-black rounded-lg shadow-lg my-3">
+          <div class="card-header px-0 py-2" id="headingTwo">
             <h2 class="mb-0">
-              <button class="btn text-white text-left collapsed w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Collapsible Group Item #2
+              <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <div class="row m-0 p-0 d-flex align-items-center">
+                  <i class="category-text h5 fas fa-angle-right icon m-0 p-3"></i>
+                  <p class="category-text h2 ml-2 my-0">
+                    -play
+                  </p>
+                  <p class="category-text h3 ml-1 my-0 text-white-50">
+                    [link or search query]
+                  </p>
+                </div>
               </button>
             </h2>
           </div>
+
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-              Anim pariatur
+            <div class="card-body pt-0">
+              <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <div class="card-body-text h6">Loads your input and adds it to the queue. If there is no playing track, then it will start playing.</div>
+                <div class="card-body-text h6">Aliases: p, q, queue</div>
+                <p class="card-body-text rounded bg-danger h6 text-white text-center w-25 p-2">
+                  Add to Queue
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 3つめ -->
+        <div class="card bg-light-black rounded-lg shadow-lg my-3">
+          <div class="card-header px-0 py-2" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <div class="row m-0 p-0 d-flex align-items-center">
+                  <i class="h5 fas fa-angle-right icon m-0 p-3"></i>
+                  <p class="category-text h2 ml-2">
+                    -play
+                  </p>
+                  <p class="category-text h3 ml-1 text-white-50">
+                    [link or search query]
+                  </p>
+                </div>
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body pt-0">
+              <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <div class="card-body-text h6">Loads your input and adds it to the queue. If there is no playing track, then it will start playing.</div>
+                <div class="card-body-text h6">Aliases: p, q, queue</div>
+                <p class="card-body-text rounded bg-danger h6 text-white text-center w-25 p-2">
+                  Add to Queue
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 4つめ -->
+        <div class="card bg-light-black rounded-lg shadow-lg my-3">
+          <div class="card-header px-0 py-2" id="headingFour">
+            <h2 class="mb-0">
+              <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                <div class="row m-0 p-0 d-flex align-items-center">
+                  <i class="h5 fas fa-angle-right icon m-0 p-3"></i>
+                  <p class="category-text h2 ml-2">
+                    -play
+                  </p>
+                  <p class="category-text h3 ml-1 text-white-50">
+                    [link or search query]
+                  </p>
+                </div>
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body pt-0">
+              <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                <div class="card-body-text h6">Loads your input and adds it to the queue. If there is no playing track, then it will start playing.</div>
+                <div class="card-body-text h6">Aliases: p, q, queue</div>
+                <p class="card-body-text rounded bg-danger h6 text-white text-center w-25 p-2">
+                  Add to Queue
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 5つめ -->
+        <div class="card bg-light-black rounded-lg shadow-lg my-3">
+          <div class="card-header px-0 py-2" id="headingFive">
+            <h2 class="mb-0">
+              <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                <div class="row m-0 p-0 d-flex align-items-center">
+                  <i class="h5 fas fa-angle-right icon m-0 p-3"></i>
+                  <p class="category-text h2 ml-2">
+                    -play
+                  </p>
+                  <p class="category-text h3 ml-1 text-white-50">
+                    [link or search query]
+                  </p>
+                </div>
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="card-body pt-0">
+              <button class="btn text-white text-left w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                <div class="card-body-text h6">Loads your input and adds it to the queue. If there is no playing track, then it will start playing.</div>
+                <div class="card-body-text h6">Aliases: p, q, queue</div>
+                <p class="card-body-text rounded bg-danger h6 text-white text-center w-25 p-2">
+                    Add to Queue
+                </p>
+              </button>
             </div>
           </div>
         </div>
 
-        <div class="card bg-light-black rounded my-3">
-          <div class="card-header p-0" id="headingThree">
-            <h2 class="mb-0">
-              <button class="btn text-white text-left collapsed w-100 p-0" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Collapsible Group Item #3
-              </button>
-            </h2>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-              Anim
-            </div>
-          </div>
-        </div>
+        
+
+        
       </div>
     </div>
 
